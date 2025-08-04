@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: hsl(var(--background)); /* Use theme variable */
+  color: hsl(var(--foreground));            /* Use theme variable */
 }
 
 .logo {
@@ -35,8 +37,10 @@
 
 .card {
   padding: 2em;
+  background-color: hsl(var(--card));           /* Use theme variable */
+  color: hsl(var(--card-foreground));           /* Use theme variable */
 }
 
 .read-the-docs {
-  color: #888;
+  color: hsl(var(--muted-foreground));          /* Use theme variable */
 }

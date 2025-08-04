@@ -1,9 +1,27 @@
+// ...existing code...
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { useTheme } from "next-themes";
+
+// Add icon SVGs
+const SunIcon = () => (
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="5" stroke="currentColor" />
+    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+  </svg>
+);
+
+const MoonIcon = () => (
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 100 14 9 9 0 009.79-4.21z" />
+  </svg>
+);
 
 const Navbar = () => {
   const navRef = useRef<HTMLElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(false); // theme state
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,16 +35,18 @@ const Navbar = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Logo animation on load
       gsap.fromTo('.logo', 
         { opacity: 0, scale: 0.8 },
         { opacity: 1, scale: 1, duration: 1, ease: 'back.out(1.7)' }
       );
-
-      // Nav items stagger animation
       gsap.fromTo('.nav-item', 
         { opacity: 0, y: -20 },
         { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.3 }
+      );
+      // Animate theme button on mount
+      gsap.fromTo('.theme-btn', 
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 1, delay: 0.7, ease: 'back.out(1.7)' }
       );
     }, navRef);
 
@@ -40,6 +60,17 @@ const Navbar = () => {
       ease: 'power2.inOut'
     });
   };
+
+// Animate icon on click
+  const handleThemeClick = () => {
+    gsap.fromTo('.theme-btn', 
+      { rotate: 0, scale: 1 },
+      { rotate: 360, scale: 1.2, duration: 0.5, yoyo: true, repeat: 1, ease: 'power1.inOut' }
+    );
+    setIsDark((prev) => !prev); // Only toggles icon for now
+    // Theme switching logic will be added later
+    setTheme(theme === "dark" ? "light" : "dark"); // Use next-themes
+  };  
 
   return (
     <nav 
@@ -59,7 +90,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Items */}
-        <div className="flex space-x-6">
+        <div className="flex items-center space-x-6">
           {[
             { name: 'Gallery', target: '#gallery' },
             { name: 'Contact Us', target: '#contact' },
@@ -73,6 +104,15 @@ const Navbar = () => {
               {item.name}
             </button>
           ))}
+          {/* Theme Switcher Button */}
+          <button
+            className="theme-btn ml-4 p-2 rounded-full border border-white/10 bg-white/10 hover:bg-white/20 transition-all duration-300 flex items-center justify-center"
+            onClick={handleThemeClick}
+            aria-label="Toggle theme"
+            type="button"
+          >
+            {isDark ? <MoonIcon /> : <SunIcon />}
+          </button>
         </div>
       </div>
     </nav>
