@@ -72,10 +72,10 @@ const Gallery = () => {
     <section id="gallery" ref={galleryRef} className="animate-on-scroll py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Our <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Gallery</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Explore our portfolio of cutting-edge web solutions that drive business growth
           </p>
         </div>
@@ -94,22 +94,22 @@ const Gallery = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                  <ExternalLink className="w-6 h-6 text-white" />
+                  <ExternalLink className="w-6 h-6 text-foreground" />
                 </div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-blue-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mb-4">
+                <p className="text-muted-foreground mb-4">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30"
+                      className="px-3 py-1 bg-blue-500/20 text-foreground rounded-full text-sm border border-blue-500/30"
                     >
                       {tech}
                     </span>

@@ -68,10 +68,10 @@ const About = () => {
     <section id="about" ref={aboutRef} className="animate-on-scroll py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Meet The <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Team</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             The creative minds behind Enspyre, dedicated to bringing your digital dreams to reality
           </p>
         </div>
@@ -90,7 +90,7 @@ const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-semibold text-white mb-1">
+                  <h3 className="text-xl font-semibold text-foreground mb-1">
                     {developer.name}
                   </h3>
                   <p className="text-blue-300 font-medium">
@@ -100,26 +100,26 @@ const About = () => {
               </div>
               
               <div className="p-6">
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   {developer.bio}
                 </p>
                 
                 <div className="flex gap-4">
                   <a
                     href={developer.social.github}
-                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-gray-300 hover:text-white"
+                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-muted-foreground hover:text-white"
                   >
                     <Github className="w-5 h-5" />
                   </a>
                   <a
                     href={developer.social.linkedin}
-                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-gray-300 hover:text-blue-400"
+                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-muted-foreground hover:text-blue-400"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
                     href={developer.social.twitter}
-                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-gray-300 hover:text-cyan-400"
+                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-muted-foreground hover:text-cyan-400"
                   >
                     <Twitter className="w-5 h-5" />
                   </a>

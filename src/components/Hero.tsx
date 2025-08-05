@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -61,7 +60,7 @@ const Hero = () => {
       </div>
 
       <div className="text-center max-w-4xl mx-auto">
-        <h1 className="hero-title text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
+        <h1 className="hero-title text-6xl md:text-8xl font-bold text-foreground mb-6 leading-tight">
           Crafting Digital
           <br />
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
@@ -69,7 +68,7 @@ const Hero = () => {
           </span>
         </h1>
         
-        <p className="hero-subtitle text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="hero-subtitle text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
           We create stunning, modern websites that captivate your audience and drive results. 
           From concept to launch, we bring your digital vision to life.
         </p>
