@@ -7,7 +7,7 @@ This project serves as a robust starter template for building modern web applica
 - **React** is used for creating dynamic, component-based user interfaces with a declarative approach.
 - **shadcn-ui** offers a collection of accessible and customizable UI components, accelerating the process of building consistent interfaces.
 - **Tailwind CSS** enables utility-first styling, allowing rapid and responsive design directly within your markup.
-
+- **next-theme** is integrated for easy theming and dark mode support, enhancing user experience across different environments.
 Together, these tools create a solid foundation for scalable, maintainable, and high-performance web applications, making it easy to kickstart new projects with best practices and modern workflows.
 
 ```sh
