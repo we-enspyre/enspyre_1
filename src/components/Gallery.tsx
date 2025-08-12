@@ -8,10 +8,10 @@ const Gallery = () => {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Modern shopping experience with seamless checkout',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center',
-      tech: ['React', 'Node.js', 'Stripe']
+      title: 'portfolio websites',
+      description: 'Elegant photography in Aarhus. Weddings, portraits, and events captured by Emilie Nørgaard.',
+      image: 'https://we-enspyre.github.io/fotograf/fotograf.png',
+      tech: ['Vite.js', 'TypeScript', 'React', 'Tailwind CSS']
     },
     {
       title: 'SaaS Dashboard',
