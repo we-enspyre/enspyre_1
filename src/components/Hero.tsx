@@ -6,7 +6,7 @@ import './ui/playcard.css';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const cardRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
+  const cardRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null),  useRef<HTMLDivElement>(null)];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -37,7 +37,7 @@ const Hero = () => {
         stagger: 0.3
       });
       // Animate playcards: fan out from bottom center, staggered, ease-out
-      const angles = [-45, 0, 45];
+      const angles = [-60, -20, 20, 60];
       const xOffsets = [-80, 0, 80];
       const yOffset = 0;
       cardRefs.forEach((ref, i) => {
@@ -78,16 +78,19 @@ const Hero = () => {
   return (
     <section ref={heroRef} className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
       {/* PlayCard background animation */}
-      <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none z-0">
+      <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none z-0 translate-y-24">
         <div className="playcard-fan-container">
           <div ref={cardRefs[0]} className="playcard-fan-card">
-            <PlayCard image="/fotografer.png" />
+            <PlayCard image="ShamNet.png" />
           </div>
           <div ref={cardRefs[1]} className="playcard-fan-card">
-            <PlayCard image="/pizza.png" />
+            <PlayCard image="fotografer.png" />
           </div>
           <div ref={cardRefs[2]} className="playcard-fan-card">
-            <PlayCard image="/frisør.png" />
+            <PlayCard image="pizza.png" />
+          </div>
+          <div ref={cardRefs[3]} className="playcard-fan-card">
+            <PlayCard image="frisør.png" />
           </div>
         </div>
       </div>
@@ -111,10 +114,10 @@ const Hero = () => {
           </span>
         </h1>
         
-        <p className="hero-subtitle text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+        {/* <p className="hero-subtitle text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
           We create stunning, modern websites that captivate your audience and drive results. 
           From concept to launch, we bring your digital vision to life.
-        </p>
+        </p> */}
         
         <button 
           onClick={scrollToGallery}
