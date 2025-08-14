@@ -1,9 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import PlayCard from './ui/playcard';
+import './ui/playcard.css';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const cardRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -33,6 +36,32 @@ const Hero = () => {
         ease: 'power2.inOut',
         stagger: 0.3
       });
+      // Animate playcards: fan out from bottom center, staggered, ease-out
+      const angles = [-45, 0, 45];
+      const xOffsets = [-80, 0, 80];
+      const yOffset = 0;
+      cardRefs.forEach((ref, i) => {
+        if (ref.current) {
+          ref.current.style.transform =
+            'translate(-50%, 0) rotate(0deg)';
+          ref.current.style.opacity = '0';
+          ref.current.style.transformOrigin = '50% 100%';
+        }
+      });
+      setTimeout(() => {
+        cardRefs.forEach((ref, i) => {
+          if (ref.current) {
+            gsap.to(ref.current, {
+              opacity: 1,
+              transform:
+                `translate(-50%, 0) rotate(${angles[i]}deg)`,
+              duration: 1,
+              ease: 'power2.out',
+              delay: i * 0.08,
+            });
+          }
+        });
+      }, 400);
     }, heroRef);
 
     return () => ctx.revert();
@@ -47,19 +76,33 @@ const Hero = () => {
   };
 
   return (
-    <section ref={heroRef} className="min-h-screen flex items-center justify-center relative px-6">
+    <section ref={heroRef} className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
+      {/* PlayCard background animation */}
+      <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none z-0">
+        <div className="playcard-fan-container">
+          <div ref={cardRefs[0]} className="playcard-fan-card">
+            <PlayCard image="/fotografer.png" />
+          </div>
+          <div ref={cardRefs[1]} className="playcard-fan-card">
+            <PlayCard image="/pizza.png" />
+          </div>
+          <div ref={cardRefs[2]} className="playcard-fan-card">
+            <PlayCard image="/frisør.png" />
+          </div>
+        </div>
+      </div>
       {/* Floating decorative elements */}
-      <div className="floating-sparkle absolute top-1/4 left-1/4 text-blue-400/30">
+      <div className="floating-sparkle absolute top-1/4 left-1/4 text-blue-400/30 z-10">
         <Sparkles size={24} />
       </div>
-      <div className="floating-sparkle absolute top-1/3 right-1/4 text-purple-400/30">
+      <div className="floating-sparkle absolute top-1/3 right-1/4 text-purple-400/30 z-10">
         <Sparkles size={32} />
       </div>
-      <div className="floating-sparkle absolute bottom-1/3 left-1/3 text-cyan-400/30">
+      <div className="floating-sparkle absolute bottom-1/3 left-1/3 text-cyan-400/30 z-10">
         <Sparkles size={20} />
       </div>
 
-      <div className="text-center max-w-4xl mx-auto">
+  <div className="text-center max-w-4xl mx-auto relative z-20">
         <h1 className="hero-title text-6xl md:text-8xl font-bold text-foreground mb-6 leading-tight">
           Crafting Digital
           <br />
