@@ -95,52 +95,56 @@ const Contact = () => {
           <div className="contact-form">
             {status === 'idle' && (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="relative">
-                  <Mail className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your email address"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full pl-12 pr-4 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
-                  />
-                </div>
-
-                <div className="relative">
-                  <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
-                  <textarea
-                    name="message"
-                    placeholder="Tell us about your project..."
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="w-full pl-12 pr-4 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="group w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center gap-3"
-                >
-                  Send Message
-                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-              </form>
+              {/* Email input */}
+              <div className="relative">
+                <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/80 z-10" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your email address"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full pl-12 pr-4 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                />
+              </div>
+            
+              {/* Message textarea */}
+              <div className="relative">
+                <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-white/80 z-10" />
+                <textarea
+                  name="message"
+                  placeholder="Tell us about your project..."
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  rows={6}
+                  className="w-full pl-12 pr-4 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 resize-none"
+                />
+              </div>
+            
+              {/* Submit button */}
+              <button
+                type="submit"
+                className="group w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center gap-3"
+              >
+                Send Message
+                <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </form>
+            
             )}
 
             {status === 'success' && (
               <div className="bg-green-500/10 border border-green-400/20 text-green-300 p-6 rounded-xl text-center shadow-lg backdrop-blur-sm transition-all duration-500">
-                <h3 className="text-2xl font-semibold mb-2">Thanks for your message! ✅</h3>
+                <h3 className="text-2xl font-semibold mb-2">Thanks for your message!</h3>
                 <p className="text-green-200">We will get back to you as soon as possible.</p>
               </div>
             )}
 
             {status === 'error' && (
               <div className="bg-red-500/10 border border-red-400/20 text-red-300 p-6 rounded-xl text-center shadow-lg backdrop-blur-sm transition-all duration-500">
-                <h3 className="text-2xl font-semibold mb-2">Something went wrong ❌</h3>
+                <h3 className="text-2xl font-semibold mb-2">Something went wrong</h3>
                 <p className="text-red-200">Sorry, we were unable to send the message. Please try again later.</p>
               </div>
             )}
@@ -168,7 +172,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                  <span>E-commerce Solutions</span>
+                  <span>SaaS Tools</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
