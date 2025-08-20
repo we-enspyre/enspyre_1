@@ -35,7 +35,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div ref={mainRef} className="relative min-h-screen bg-background overflow-x-hidden">
+    <div ref={mainRef} className="relative min-h-screen bg-background overflow-x-hidden overflow-y-hidden">
       <AnimatedBackground />
       <Navbar />
       <Hero />

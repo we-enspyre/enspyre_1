@@ -6,7 +6,12 @@ import './ui/playcard.css';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const cardRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null),  useRef<HTMLDivElement>(null)];
+  const cardRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null)
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -36,14 +41,12 @@ const Hero = () => {
         ease: 'power2.inOut',
         stagger: 0.3
       });
-      // Animate playcards: fan out from bottom center, staggered, ease-out
+
+      // Animate playcards
       const angles = [-60, -20, 20, 60];
-      const xOffsets = [-80, 0, 80];
-      const yOffset = 0;
       cardRefs.forEach((ref, i) => {
         if (ref.current) {
-          ref.current.style.transform =
-            'translate(-50%, 0) rotate(0deg)';
+          ref.current.style.transform = 'translate(-50%, 0) rotate(0deg)';
           ref.current.style.opacity = '0';
           ref.current.style.transformOrigin = '50% 100%';
         }
@@ -53,8 +56,7 @@ const Hero = () => {
           if (ref.current) {
             gsap.to(ref.current, {
               opacity: 1,
-              transform:
-                `translate(-50%, 0) rotate(${angles[i]}deg)`,
+              transform: `translate(-50%, 0) rotate(${angles[i]}deg)`,
               duration: 1,
               ease: 'power2.out',
               delay: i * 0.08,
@@ -76,9 +78,12 @@ const Hero = () => {
   };
 
   return (
-    <section ref={heroRef} className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
+    <section
+      ref={heroRef}
+      className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden"
+    >
       {/* PlayCard background animation */}
-      <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none z-0 translate-y-24">
+      <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none z-0 translate-y-24 max-w-full overflow-hidden">
         <div className="playcard-fan-container">
           <div ref={cardRefs[0]} className="playcard-fan-card">
             <PlayCard image="ShamNet.png" />
@@ -94,6 +99,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
       {/* Floating decorative elements */}
       <div className="floating-sparkle absolute top-1/4 left-1/4 text-blue-400/30 z-10">
         <Sparkles size={24} />
@@ -105,7 +111,7 @@ const Hero = () => {
         <Sparkles size={20} />
       </div>
 
-  <div className="text-center max-w-4xl mx-auto relative z-20">
+      <div className="text-center max-w-4xl mx-auto relative z-20">
         <h1 className="hero-title text-6xl md:text-8xl font-bold text-foreground mb-6 leading-tight">
           Crafting Digital
           <br />
@@ -113,12 +119,7 @@ const Hero = () => {
             Experiences
           </span>
         </h1>
-        
-        {/* <p className="hero-subtitle text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-          We create stunning, modern websites that captivate your audience and drive results. 
-          From concept to launch, we bring your digital vision to life.
-        </p> */}
-        
+
         <button 
           onClick={scrollToGallery}
           className="hero-cta group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center gap-3 mx-auto"

@@ -11,7 +11,7 @@ const PlayCard: React.FC<PlayCardProps> = ({ image, className, style }) => {
   return (
     <div
       className={cn(
-        "playcard relative rounded-xl shadow-lg bg-cover bg-center transition-transform duration-700",
+        "playcard relative rounded-xl shadow-lg bg-cover bg-center transition-transform duration-700 overflow-x-hidden",
         className
       )}
       style={{ backgroundImage: `url(${image})`, ...style }}
