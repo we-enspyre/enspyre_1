@@ -97,7 +97,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email input */}
               <div className="relative">
-                <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/80 z-10" />
+                <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-foreground z-10" />
                 <input
                   type="email"
                   name="email"
@@ -111,7 +111,7 @@ const Contact = () => {
             
               {/* Message textarea */}
               <div className="relative">
-                <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-white/80 z-10" />
+                <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-foreground z-10" />
                 <textarea
                   name="message"
                   placeholder="Tell us about your project..."
