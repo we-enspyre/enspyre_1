@@ -2,62 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useTheme } from "next-themes";
 import { useIsMobile } from "@/hooks/use-mobile"; // ✅ fixed import
-
-// === Icons ===
-const SunIcon = () => (
-  <svg
-    className="w-6 h-6"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={2}
-    viewBox="0 0 24 24"
-  >
-    <circle cx="12" cy="12" r="5" stroke="currentColor" />
-    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-  </svg>
-);
-
-const MoonIcon = () => (
-  <svg
-    className="w-6 h-6"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={2}
-    viewBox="0 0 24 24"
-  >
-    <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 100 14 9 9 0 009.79-4.21z" />
-  </svg>
-);
-
-const MenuIcon = () => (
-  <svg
-    className="w-7 h-7"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={2}
-    viewBox="0 0 24 24"
-  >
-    <path d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-);
-
-const CloseIcon = () => (
-  <svg
-    className="w-7 h-7"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={2}
-    viewBox="0 0 24 24"
-  >
-    <path d="M6 18L18 6M6 6l12 12" />
-  </svg>
-);
+import { SunIcon, MenuIcon, MoonIcon,CloseIcon } from "@/components/ui/navbaricons";
 
 // === Navbar Component ===
 const Navbar = () => {
   const navRef = useRef<HTMLElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const isMobile = useIsMobile();
@@ -102,7 +52,6 @@ const Navbar = () => {
 
   const handleThemeClick = () => {
     gsap.fromTo(".theme-btn", { rotate: 0 }, { rotate: 360, duration: 0.4 });
-    setIsDark((prev) => !prev);
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
@@ -111,6 +60,17 @@ const Navbar = () => {
     { name: "Contact Us", target: "#contact" },
     { name: "About Us", target: "#about" },
   ];
+  
+  const ThemeToggle = () => (
+  <button
+    className="theme-btn p-2 rounded-full border border-border bg-background/10 hover:bg-background/20 
+               transition-all duration-300 flex items-center justify-center"
+    onClick={handleThemeClick}
+    aria-label="Toggle theme"
+  >
+    {theme === "dark" ? <MoonIcon /> : <SunIcon />}
+  </button>
+);
 
   return (
     <>
@@ -143,28 +103,14 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
-              <button
-                className="theme-btn ml-4 p-2 rounded-full border border-border bg-background/10 hover:bg-background/20 
-                         transition-all duration-300 flex items-center justify-center"
-                onClick={handleThemeClick}
-                aria-label="Toggle theme"
-              >
-                {isDark ? <MoonIcon /> : <SunIcon />}
-              </button>
+              <ThemeToggle />
             </div>
           )}
 
           {/* Mobile Nav */}
           {isMobile && (
             <div className="flex items-center space-x-4">
-              <button
-                className="theme-btn p-2 rounded-full border border-border bg-background/10 hover:bg-background/20 
-                 transition-all duration-300 flex items-center justify-center"
-                onClick={handleThemeClick}
-                aria-label="Toggle theme"
-              >
-                {isDark ? <MoonIcon /> : <SunIcon />}
-              </button>
+              <ThemeToggle />
               <button
                 onClick={() => setIsMenuOpen((prev) => !prev)}
                 className="p-2"

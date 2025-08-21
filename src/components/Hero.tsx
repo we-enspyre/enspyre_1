@@ -21,17 +21,16 @@ const Hero = () => {
         { opacity: 0, y: 100 },
         { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }
       )
-      .fromTo('.hero-subtitle', 
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
-        '-=0.6'
-      )
+      // .fromTo('.hero-subtitle', 
+      //   { opacity: 0, y: 50 },
+      //   { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
+      //   '-=0.6'
+      // )
       .fromTo('.hero-cta', 
         { opacity: 0, scale: 0.8 },
         { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.7)' },
         '-=0.4'
       );
-
       // Floating animation for sparkles
       gsap.to('.floating-sparkle', {
         y: -20,
