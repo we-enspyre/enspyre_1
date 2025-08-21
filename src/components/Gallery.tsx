@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ExternalLink } from 'lucide-react';
+import { link } from 'fs';
 
 const Gallery = () => {
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -11,37 +12,43 @@ const Gallery = () => {
       title: 'portfolio websites',
       description: 'Elegant photography in Aarhus. Weddings, portraits, and events captured by Emilie Nørgaard.',
       image: 'https://we-enspyre.github.io/fotograf/fotograf.png',
-      tech: ['Vite.js', 'TypeScript', 'React', 'Tailwind CSS']
+      tech: ['Vite.js', 'TypeScript', 'React', 'Tailwind CSS'],
+      link: 'https://we-enspyre.github.io/fotograf/'
     },
     {
       title: 'SaaS Dashboard',
       description: 'Analytics platform with real-time data visualization',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center',
-      tech: ['Vue.js', 'Python', 'D3.js']
+      tech: ['Vue.js', 'Python', 'D3.js'],
+      link: 'https://we-enspyre.github.io/fotograf/'
     },
     {
       title: 'Restaurant Website',
       description: 'Elegant dining experience with online reservations',
       image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop&crop=center',
-      tech: ['Next.js', 'Tailwind', 'Prisma']
+      tech: ['Next.js', 'Tailwind', 'Prisma'],
+      link: 'https://we-enspyre.github.io/fotograf/'
     },
     {
       title: 'Mobile App Landing',
       description: 'App showcase with interactive prototypes',
       image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop&crop=center',
-      tech: ['React', 'Framer Motion', 'Firebase']
+      tech: ['React', 'Framer Motion', 'Firebase'],
+      link: 'https://we-enspyre.github.io/fotograf/'
     },
     {
       title: 'Portfolio Website',
       description: 'Creative showcase for digital artist',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center',
-      tech: ['Gatsby', 'GraphQL', 'Netlify CMS']
+      tech: ['Gatsby', 'GraphQL', 'Netlify CMS'],
+      link: 'https://we-enspyre.github.io/fotograf/'
     },
     {
       title: 'Corporate Platform',
       description: 'Enterprise solution with team collaboration',
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&crop=center',
-      tech: ['Angular', 'TypeScript', 'AWS']
+      tech: ['Angular', 'TypeScript', 'AWS'],
+      link: 'https://we-enspyre.github.io/fotograf/'
     }
   ];
 
@@ -82,9 +89,12 @@ const Gallery = () => {
 
         <div className="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="gallery-item group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gallery-item group relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 block"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -116,7 +126,7 @@ const Gallery = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

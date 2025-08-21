@@ -50,12 +50,12 @@ const About = () => {
           opacity: 1, 
           y: 0, 
           rotationY: 0,
-          duration: 1,
+          duration: 0.4,
           ease: 'power2.out',
-          stagger: 0.2,
+          stagger: 0.1,
           scrollTrigger: {
             trigger: '.developers-grid',
-            start: 'top 80%'
+            start: 'top 90%'
           }
         }
       );
