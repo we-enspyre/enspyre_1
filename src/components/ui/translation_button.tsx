@@ -1,39 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 
-interface TranslationButtonProps {
-  className?: string;
-}
+const TranslationButton = () => {
+  const { i18n } = useTranslation();
+  const [current, setCurrent] = useState(i18n.language);
 
-const TranslationButton: React.FC<TranslationButtonProps> = ({ className }) => {
-  const [lang, setLang] = useState<"en" | "da">("en"); // default English site
+  useEffect(() => {
+    const saved = localStorage.getItem("lang");
+    if (saved && saved !== i18n.language) {
+      i18n.changeLanguage(saved);
+      setCurrent(saved);
+    }
+  }, [i18n]);
 
-  const handleClick = () => {
-    // Animate flip
-    gsap.fromTo(
-      ".translation-flag",
+  const toggleLang = () => {
+    const newLang = current === "en" ? "da" : "en";
+    gsap.fromTo(".translation-flag",
       { rotateY: 0 },
       {
         rotateY: 180,
         duration: 0.4,
         ease: "power2.inOut",
-        onComplete: () => setLang(lang === "en" ? "da" : "en"),
+        onComplete: () => {
+          i18n.changeLanguage(newLang);
+          localStorage.setItem("lang", newLang);
+          setCurrent(newLang);
+        },
       }
     );
   };
 
   return (
     <button
-      onClick={handleClick}
-      className={`translation-btn p-2 rounded-full border border-border bg-background/10 hover:bg-background/20 
-                  transition-all duration-300 flex items-center justify-center ${className}`}
+      onClick={toggleLang}
+      className="translation-btn p-2 rounded-full border border-border bg-background/10 hover:bg-background/20 
+                 transition-all duration-300 flex items-center justify-center"
       aria-label="Toggle language"
     >
       <img
-        src={lang === "en" ? "/src/assets/dk.svg" : "/src/assets/en.svg"}
-        alt={lang === "en" ? "Switch to Danish" : "Switch to English"}
+        src={current === "en" ? "./src/assets/dk.svg" : "./src/assets/en.svg"}
+        alt="Translation Flag"
         className="translation-flag w-6 h-6"
       />
+      <span className="ml-2">
+        {current === "en" ? "🇩🇰" : "🇬🇧"}
+      </span>
     </button>
   );
 };

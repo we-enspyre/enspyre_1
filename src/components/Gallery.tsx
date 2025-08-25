@@ -1,58 +1,43 @@
-
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ExternalLink } from 'lucide-react';
-import { link } from 'fs';
+import { useTranslation } from 'react-i18next';
+import { Badge } from '@/components/ui/badge';
+
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  tech: string[];
+  link: string;
+};
+
+const techVariantMap: Record<string, 'default' | 'secondary' | 'destructive' | 'outline'> = {
+  'React': 'default',
+  'Vue.js': 'secondary',
+  'Angular': 'destructive',
+  'Next.js': 'default',
+  'Gatsby': 'secondary',
+  'TypeScript': 'default',
+  'Python': 'destructive',
+  'D3.js': 'outline',
+  'Tailwind CSS': 'secondary',
+  'Tailwind': 'secondary',
+  'Framer Motion': 'default',
+  'Firebase': 'destructive',
+  'Prisma': 'default',
+  'GraphQL': 'secondary',
+  'Netlify CMS': 'default',
+  'AWS': 'destructive',
+  'Vite.js': 'secondary'
+};
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const galleryRef = useRef<HTMLDivElement>(null);
 
-  const projects = [
-    {
-      title: 'portfolio websites',
-      description: 'Elegant photography in Aarhus. Weddings, portraits, and events captured by Emilie Nørgaard.',
-      image: 'https://we-enspyre.github.io/fotograf/fotograf.png',
-      tech: ['Vite.js', 'TypeScript', 'React', 'Tailwind CSS'],
-      link: 'https://we-enspyre.github.io/fotograf/'
-    },
-    {
-      title: 'SaaS Dashboard',
-      description: 'Analytics platform with real-time data visualization',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center',
-      tech: ['Vue.js', 'Python', 'D3.js'],
-      link: 'https://we-enspyre.github.io/fotograf/'
-    },
-    {
-      title: 'Restaurant Website',
-      description: 'Elegant dining experience with online reservations',
-      image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop&crop=center',
-      tech: ['Next.js', 'Tailwind', 'Prisma'],
-      link: 'https://we-enspyre.github.io/fotograf/'
-    },
-    {
-      title: 'Mobile App Landing',
-      description: 'App showcase with interactive prototypes',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop&crop=center',
-      tech: ['React', 'Framer Motion', 'Firebase'],
-      link: 'https://we-enspyre.github.io/fotograf/'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'Creative showcase for digital artist',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center',
-      tech: ['Gatsby', 'GraphQL', 'Netlify CMS'],
-      link: 'https://we-enspyre.github.io/fotograf/'
-    },
-    {
-      title: 'Corporate Platform',
-      description: 'Enterprise solution with team collaboration',
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&crop=center',
-      tech: ['Angular', 'TypeScript', 'AWS'],
-      link: 'https://we-enspyre.github.io/fotograf/'
-    }
-  ];
-      
-  // Gallery items animation
+  const projects = t('gallery.projects', { returnObjects: true }) as Project[];
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo('.gallery-item', 
@@ -80,11 +65,9 @@ const Gallery = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Our <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Gallery</span>
+            {t('gallery.titlePrefix')} <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{t('gallery.titleHighlight')}</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our portfolio of cutting-edge web solutions that drive business growth
-          </p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t('gallery.description')}</p>
         </div>
 
         <div className="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -112,17 +95,12 @@ const Gallery = () => {
                 <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-blue-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4">
-                  {project.description}
-                </p>
+                <p className="text-muted-foreground mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-blue-500/20 text-foreground rounded-full text-sm border border-blue-500/30"
-                    >
+                    <Badge key={techIndex} variant={techVariantMap[tech] || 'outline'}>
                       {tech}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
               </div>

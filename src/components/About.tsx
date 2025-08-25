@@ -1,62 +1,55 @@
-
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   const developers = [
     {
-      name: 'Alex Chen',
-      role: 'Full-Stack Developer',
-      bio: 'Passionate about creating scalable web applications with modern technologies. Specializes in React, Node.js, and cloud architecture.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
-      social: {
-        github: '#',
-        linkedin: '#',
-        twitter: '#'
-      }
+      name: "Alex Chen",
+      role: t("about.developers.0.role"),
+      bio: t("about.developers.0.bio"),
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      social: { github: "#", linkedin: "#", twitter: "#" },
     },
     {
-      name: 'Sarah Johnson',
-      role: 'UI/UX Designer',
-      bio: 'Design-focused developer who bridges the gap between beautiful interfaces and seamless user experiences. Loves crafting pixel-perfect designs.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face',
-      social: {
-        github: '#',
-        linkedin: '#',
-        twitter: '#'
-      }
+      name: "Sarah Johnson",
+      role: t("about.developers.1.role"),
+      bio: t("about.developers.1.bio"),
+      image:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      social: { github: "#", linkedin: "#", twitter: "#" },
     },
     {
-      name: 'Marcus Rodriguez',
-      role: 'DevOps Engineer',
-      bio: 'Infrastructure enthusiast who ensures our applications run smoothly at scale. Expert in cloud platforms and automation.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
-      social: {
-        github: '#',
-        linkedin: '#',
-        twitter: '#'
-      }
-    }
+      name: "Marcus Rodriguez",
+      role: t("about.developers.2.role"),
+      bio: t("about.developers.2.bio"),
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      social: { github: "#", linkedin: "#", twitter: "#" },
+    },
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo('.developer-card', 
+      gsap.fromTo(
+        ".developer-card",
         { opacity: 0, y: 100, rotationY: 45 },
-        { 
-          opacity: 1, 
-          y: 0, 
+        {
+          opacity: 1,
+          y: 0,
           rotationY: 0,
           duration: 0.4,
-          ease: 'power2.out',
+          ease: "power2.out",
           stagger: 0.1,
           scrollTrigger: {
-            trigger: '.developers-grid',
-            start: 'top 90%'
-          }
+            trigger: ".developers-grid",
+            start: "top 90%",
+          },
         }
       );
     }, aboutRef);
@@ -69,10 +62,13 @@ const About = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Meet The <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Team</span>
+            {t("about.title")}{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              {t("about.highlight")}
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The creative minds behind Enspyre, dedicated to bringing your digital dreams to reality
+            {t("about.subtitle")}
           </p>
         </div>
 
@@ -93,17 +89,15 @@ const About = () => {
                   <h3 className="text-xl font-semibold text-foreground mb-1">
                     {developer.name}
                   </h3>
-                  <p className="text-blue-300 font-medium">
-                    {developer.role}
-                  </p>
+                  <p className="text-blue-300 font-medium">{developer.role}</p>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {developer.bio}
                 </p>
-                
+
                 <div className="flex gap-4">
                   <a
                     href={developer.social.github}
