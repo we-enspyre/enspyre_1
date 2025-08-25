@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useTheme } from "next-themes";
 import { useIsMobile } from "@/hooks/use-mobile"; // ✅ fixed import
 import { SunIcon, MenuIcon, MoonIcon,CloseIcon } from "@/components/ui/navbaricons";
+import TranslationButton from "@/components/ui/translation_button"; // adjust path
 
 // === Navbar Component ===
 const Navbar = () => {
@@ -103,6 +104,8 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
+              <TranslationButton />
+
               <ThemeToggle />
             </div>
           )}
@@ -110,6 +113,8 @@ const Navbar = () => {
           {/* Mobile Nav */}
           {isMobile && (
             <div className="flex items-center space-x-4">
+              <TranslationButton />
+
               <ThemeToggle />
               <button
                 onClick={() => setIsMenuOpen((prev) => !prev)}

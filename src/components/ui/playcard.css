@@ -27,6 +27,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  transform-origin: center bottom; /* 👈 ensures fan shrinks nicely */
+
 }
 
 .playcard-fan-card {

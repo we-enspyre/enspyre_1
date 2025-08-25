@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import PlayCard from './ui/playcard';
 import './ui/playcard.css';
+import { useIsMobile } from "@/hooks/use-mobile" // adjust path
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -12,6 +13,7 @@ const Hero = () => {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null)
   ];
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -21,11 +23,6 @@ const Hero = () => {
         { opacity: 0, y: 100 },
         { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }
       )
-      // .fromTo('.hero-subtitle', 
-      //   { opacity: 0, y: 50 },
-      //   { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
-      //   '-=0.6'
-      // )
       .fromTo('.hero-cta', 
         { opacity: 0, scale: 0.8 },
         { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.7)' },
@@ -83,7 +80,8 @@ const Hero = () => {
     >
       {/* PlayCard background animation */}
       <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none z-0 translate-y-24 max-w-full overflow-hidden">
-        <div className="playcard-fan-container">
+        <div className="playcard-fan-container" style={{ transform: isMobile ? "scale(0.8)" : "scale(1)" }}>
+
           <div ref={cardRefs[0]} className="playcard-fan-card">
             <PlayCard image="ShamNet.png" />
           </div>

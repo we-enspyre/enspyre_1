@@ -51,17 +51,17 @@ const Gallery = () => {
       link: 'https://we-enspyre.github.io/fotograf/'
     }
   ];
-
+      
+  // Gallery items animation
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Gallery items animation
       gsap.fromTo('.gallery-item', 
         { opacity: 0, y: 100, scale: 0.8 },
         { 
           opacity: 1, 
           y: 0, 
           scale: 1,
-          duration: 1,
+          duration: 0.5,
           ease: 'power2.out',
           stagger: 0.1,
           scrollTrigger: {
