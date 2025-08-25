@@ -1,8 +1,11 @@
 {
-  "navbar": {
-    "gallery": "Gallery",
-    "contact": "Contact Us",
-    "about": "About Us"
+   "navbar": {
+    "items": [
+      { "name": "Gallery", "target": "#gallery" },
+      { "name": "Contact Us", "target": "#contact" },
+      { "name": "About Us", "target": "#about" }
+    ],
+    "toggleTheme": "Toggle theme"
   },
    "hero": {
     "title": "Crafting Digital",

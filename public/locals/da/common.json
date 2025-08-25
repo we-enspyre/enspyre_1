@@ -1,8 +1,11 @@
 {
-  "navbar": {
-    "gallery": "Galleri",
-    "contact": "Kontakt Os",
-    "about": "Om Os"
+   "navbar": {
+    "items": [
+      { "name": "Galleri", "target": "#gallery" },
+      { "name": "Kontakt Os", "target": "#contact" },
+      { "name": "Om Os", "target": "#about" }
+    ],
+    "toggleTheme": "Skift tema"
   },
   "hero": {
     "title": "Skaber digitale",
