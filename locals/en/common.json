@@ -1,0 +1,113 @@
+{
+   "navbar": {
+    "items": [
+      { "name": "Gallery", "target": "#gallery" },
+      { "name": "Contact Us", "target": "#contact" },
+      { "name": "About Us", "target": "#about" }
+    ],
+    "toggleTheme": "Toggle theme"
+  },
+   "hero": {
+    "title": "Crafting Digital",
+    "highlight": "Experiences",
+    "cta": "Explore Our Work"
+  },
+   "gallery": {
+    "titlePrefix": "Our",
+    "titleHighlight": "Gallery",
+    "description": "Explore our portfolio of cutting-edge web solutions that drive business growth",
+    "projects": [
+      {
+        "title": "Portfolio Websites",
+        "description": "Elegant photography in Aarhus. Weddings, portraits, and events captured by Emilie Nørgaard.",
+        "image": "https://we-enspyre.github.io/fotograf/fotograf.png",
+        "tech": ["Vite.js", "TypeScript", "React", "Tailwind CSS"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "SaaS Dashboard",
+        "description": "Analytics platform with real-time data visualization",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
+        "tech": ["Vue.js", "Python", "D3.js"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "Restaurant Website",
+        "description": "Elegant dining experience with online reservations",
+        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop&crop=center",
+        "tech": ["Next.js", "Tailwind", "Prisma"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "Mobile App Landing",
+        "description": "App showcase with interactive prototypes",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop&crop=center",
+        "tech": ["React", "Framer Motion", "Firebase"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "Portfolio Website",
+        "description": "Creative showcase for digital artist",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
+        "tech": ["Gatsby", "GraphQL", "Netlify CMS"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "Corporate Platform",
+        "description": "Enterprise solution with team collaboration",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&crop=center",
+        "tech": ["Angular", "TypeScript", "AWS"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      }
+    ]
+  },
+  "about": {
+    "title": "Meet The",
+    "highlight": "Team",
+    "subtitle": "The creative minds behind Enspyre, dedicated to bringing your digital dreams to reality",
+    "developers": [
+      {
+        "role": "Full-Stack Developer",
+        "bio": "Passionate about creating scalable web applications with modern technologies. Specializes in React, Node.js, and cloud architecture."
+      },
+      {
+        "role": "UI/UX Designer",
+        "bio": "Design-focused developer who bridges the gap between beautiful interfaces and seamless user experiences. Loves crafting pixel-perfect designs."
+      },
+      {
+        "role": "DevOps Engineer",
+        "bio": "Infrastructure enthusiast who ensures our applications run smoothly at scale. Expert in cloud platforms and automation."
+      }
+    ]
+  },
+ "contact": {
+    "titlePrefix": "Get In",
+    "titleHighlight": "Touch",
+    "description": "Ready to bring your digital vision to life? Let's start the conversation.",
+    "emailPlaceholder": "Your email address",
+    "messagePlaceholder": "Tell us about your project...",
+    "sendButton": "Send Message",
+    "successTitle": "Thanks for your message!",
+    "successMessage": "We will get back to you as soon as possible.",
+    "errorTitle": "Something went wrong",
+    "errorMessage": "Sorry, we were unable to send the message. Please try again later.",
+    "infoTitle": "Let's Build Something Amazing",
+    "infoDescription": "We're passionate about creating digital experiences that make a difference. Whether you're a startup looking to make your mark or an established business ready to evolve, we're here to help.",
+    "services": [
+      { "label": "Custom Web Development", "color": "#3b82f6" },
+      { "label": "UI/UX Design", "color": "#a855f7" },
+      { "label": "SaaS Tools", "color": "#06b6d4" },
+      { "label": "Performance Optimization", "color": "#ec4899" }
+    ]
+  },
+  "info": {
+    "heading": "Let's Build Something Amazing",
+    "text": "We're passionate about creating digital experiences that make a difference. Whether you're a startup looking to make your mark or an established business ready to evolve, we're here to help.",
+    "services": [
+      { "label": "Custom Web Development", "color": "#3b82f6" },
+      { "label": "UI/UX Design", "color": "#a855f7" },
+      { "label": "SaaS Tools", "color": "#06b6d4" },
+      { "label": "Performance Optimization", "color": "#ec4899" }
+    ]
+  }
+}

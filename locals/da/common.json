@@ -1,0 +1,113 @@
+{
+   "navbar": {
+    "items": [
+      { "name": "Galleri", "target": "#gallery" },
+      { "name": "Kontakt Os", "target": "#contact" },
+      { "name": "Om Os", "target": "#about" }
+    ],
+    "toggleTheme": "Skift tema"
+  },
+  "hero": {
+    "title": "Skaber digitale",
+    "highlight": "Oplevelser",
+    "cta": "Udforsk Vores Arbejde"
+  },
+   "gallery": {
+    "titlePrefix": "Vores",
+    "titleHighlight": "Galleri",
+    "description": "Udforsk vores portefølje af banebrydende webløsninger, der skaber vækst i din forretning",
+    "projects": [
+      {
+        "title": "Portfolio Websites",
+        "description": "Elegant fotografering i Aarhus. Bryllupper, portrætter og events fanget af Emilie Nørgaard.",
+        "image": "https://we-enspyre.github.io/fotograf/fotograf.png",
+        "tech": ["Vite.js", "TypeScript", "React", "Tailwind CSS"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "SaaS Dashboard",
+        "description": "Analyseplatform med realtids visualisering af data",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
+        "tech": ["Vue.js", "Python", "D3.js"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "Restaurant Website",
+        "description": "Elegant spiseoplevelse med online reservationer",
+        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop&crop=center",
+        "tech": ["Next.js", "Tailwind", "Prisma"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "Mobile App Landing",
+        "description": "App-præsentation med interaktive prototyper",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop&crop=center",
+        "tech": ["React", "Framer Motion", "Firebase"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "Portfolio Website",
+        "description": "Kreativ showcase for digitale kunstnere",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
+        "tech": ["Gatsby", "GraphQL", "Netlify CMS"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      },
+      {
+        "title": "Corporate Platform",
+        "description": "Enterprise-løsning med team-samarbejde",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&crop=center",
+        "tech": ["Angular", "TypeScript", "AWS"],
+        "link": "https://we-enspyre.github.io/fotograf/"
+      }
+    ]
+  },
+  "about": {
+    "title": "Mød",
+    "highlight": "Teamet",
+    "subtitle": "De kreative hoveder bag Enspyre, dedikeret til at gøre dine digitale drømme til virkelighed",
+    "developers": [
+      {
+        "role": "Full-Stack Udvikler",
+        "bio": "Brænder for at skabe skalerbare webapplikationer med moderne teknologier. Specialiseret i React, Node.js og cloud-arkitektur."
+      },
+      {
+        "role": "UI/UX Designer",
+        "bio": "Designfokuseret udvikler, der bygger bro mellem smukke grænseflader og problemfri brugeroplevelser. Elsker at skabe pixel-perfekte designs."
+      },
+      {
+        "role": "DevOps Ingeniør",
+        "bio": "Infrastruktur-entusiast, der sikrer at vores applikationer kører problemfrit i stor skala. Ekspert i cloud-platforme og automatisering."
+      }
+    ]
+  },
+    "contact": {
+    "titlePrefix": "Kom i",
+    "titleHighlight": "Kontakt",
+    "description": "Klar til at realisere din digitale vision? Lad os starte samtalen.",
+    "emailPlaceholder": "Din e-mailadresse",
+    "messagePlaceholder": "Fortæl os om dit projekt...",
+    "sendButton": "Send besked",
+    "successTitle": "Tak for din besked!",
+    "successMessage": "Vi vender tilbage til dig så hurtigt som muligt.",
+    "errorTitle": "Noget gik galt",
+    "errorMessage": "Beklager, vi kunne ikke sende beskeden. Prøv venligst igen senere.",
+    "infoTitle": "Lad os bygge noget fantastisk",
+    "infoDescription": "Vi brænder for at skabe digitale oplevelser, der gør en forskel. Uanset om du er en startup, der vil markere dig, eller en etableret virksomhed, der er klar til at udvikle sig, er vi her for at hjælpe.",
+    "services": [
+      { "label": "Custom Webudvikling", "color": "#3b82f6" },
+      { "label": "UI/UX Design", "color": "#a855f7" },
+      { "label": "SaaS-værktøjer", "color": "#06b6d4" },
+      { "label": "Performanceoptimering", "color": "#ec4899" }
+    ]
+  },
+  "info": {
+    "heading": "Lad os Bygge Noget Fantastisk",
+    "text": "Vi brænder for at skabe digitale oplevelser, der gør en forskel. Uanset om du er en startup, der vil sætte dit præg, eller en etableret virksomhed, der vil udvikle sig, er vi her for at hjælpe.",
+    "services": [
+      { "label": "Skræddersyet Webudvikling", "color": "#3b82f6" },
+      { "label": "UI/UX Design", "color": "#a855f7" },
+      { "label": "SaaS Værktøjer", "color": "#06b6d4" },
+      { "label": "Ydelsesoptimering", "color": "#ec4899" }
+    ]
+  }
+}
