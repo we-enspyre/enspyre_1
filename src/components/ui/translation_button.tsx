@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
+import engIcon from "@/assets/en.svg";
+import dkIcon from "@/assets/dk.svg";
 
 const TranslationButton = () => {
   const { i18n } = useTranslation();
@@ -35,16 +37,17 @@ const TranslationButton = () => {
     <button
       onClick={toggleLang}
       className="translation-btn p-2 rounded-full border border-border bg-background/10 hover:bg-background/20 
-                 transition-all duration-300 flex items-center justify-center"
+           transition-all duration-300 flex items-center justify-center"
       aria-label="Toggle language"
     >
       <img
-        src={current === "en" ? "./src/assets/dk.svg" : "./src/assets/en.svg"}
-        alt="Translation Flag"
-        className="translation-flag w-6 h-6"
+      src={current === "en" ? dkIcon : engIcon}
+      alt="Translation Flag"
+      className="translation-flag w-6 h-6"
       />
       <span className="ml-2">
-        {current === "en" ? "🇩🇰" : "🇬🇧"}
+        {/* // switch places between the dk and en  */}
+      {current === "en" ? "🇩🇰" : "🇬🇧"}
       </span>
     </button>
   );
