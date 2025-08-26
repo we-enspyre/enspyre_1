@@ -69,7 +69,7 @@ const Hero = () => {
           ease: "power1.inOut",
         }, 0);
       });
-
+      //Check later for more controlled scrolling effects
       // Aligned → slide up & fade out
       cardRefs.forEach((ref) => {
         if (!ref.current) return;
