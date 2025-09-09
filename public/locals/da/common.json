@@ -2,6 +2,8 @@
    "navbar": {
     "items": [
       { "name": "Galleri", "target": "#gallery" },
+      { "name": "Indsaml Leads", "target": "#lead-collection" },
+      { "name": "Administrer Leads", "target": "#leads-management" },
       { "name": "Kontakt Os", "target": "#contact" },
       { "name": "Om Os", "target": "#about" }
     ],

@@ -9,6 +9,8 @@ import Gallery from '../components/Gallery';
 import Contact from '../components/Contact';
 import About from '../components/About';
 import AnimatedBackground from '../components/AnimatedBackground';
+import LeadCollection from '../components/LeadCollection';
+import LeadsManagement from '../components/LeadsManagement';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
@@ -19,11 +21,11 @@ const Index = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Animate sections on scroll
-      gsap.utils.toArray('.animate-on-scroll').forEach((element: any) => {
+      gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
         ScrollTrigger.create({
-          trigger: element,
+          trigger: element as Element,
           start: 'top 80%',
-          animation: gsap.fromTo(element, 
+          animation: gsap.fromTo(element as Element, 
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
           ),
@@ -40,6 +42,8 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Gallery />
+      <LeadCollection />
+      <LeadsManagement />
       <Contact />
       <About />
     </div>
