@@ -27,21 +27,21 @@
     {
       "title": "SaaS Dashboard",
       "description": "Functional landing page and dashboard for Shamnet",
-      "image": "https://we-enspyre.github.io/fotograf/shamnetwide.png",
+      "image": "https://we-enspyre.github.io/enspyre_1/shamnetwide.png",
       "tech": ["Vite.js", "Hostinger", "WordPress"],
       "link": "https://www.sham-net.com/"
     },
     {
       "title": "Restaurant Website",
       "description": "Elegant dining experience with online reservations",
-      "image": "https://we-enspyre.github.io/pizzatemplate.png",
+      "image": "https://we-enspyre.github.io/enspyre_1/pizzatemplate.png",
       "tech": ["Next.js", "Tailwind", "Tailwind CSS"],
       "link": "https://we-enspyre.github.io/PizzaTemplate/"
     },
     {
       "title": "Websites for small shops",
       "description": "Enterprise solution with a booking system",
-      "image": "https://we-enspyre.github.io/fotograf/BT.png",
+      "image": "https://we-enspyre.github.io/enspyre_1/fotograf/BT.png",
       "tech": ["TypeScript", "React", "Tailwind CSS"],
       "link": "https://we-enspyre.github.io/BT/"
     }
