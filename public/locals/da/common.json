@@ -26,38 +26,24 @@
       },
       {
         "title": "SaaS Dashboard",
-        "description": "Analyseplatform med realtids visualisering af data",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
-        "tech": ["Vue.js", "Python", "D3.js"],
-        "link": "https://we-enspyre.github.io/fotograf/"
+        "description": "Funktionelt Landingpage og Dashboard for Shamnet",
+        "image": "https://we-enspyre.github.io/fotograf/shamnetwide.png",
+        "tech": ["Vite.js", "Hostinger", "WordPress"],
+        "link": "https://www.sham-net.com/"
       },
       {
         "title": "Restaurant Website",
         "description": "Elegant spiseoplevelse med online reservationer",
-        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop&crop=center",
-        "tech": ["Next.js", "Tailwind", "Prisma"],
-        "link": "https://we-enspyre.github.io/fotograf/"
+        "image": "https://we-enspyre.github.io/pizzatemplate.png",
+        "tech": ["Next.js", "Tailwind", "Tailwind CSS"],
+        "link": "https://we-enspyre.github.io/PizzaTemplate/"
       },
       {
-        "title": "Mobile App Landing",
-        "description": "App-præsentation med interaktive prototyper",
-        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop&crop=center",
-        "tech": ["React", "Framer Motion", "Firebase"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      },
-      {
-        "title": "Portfolio Website",
-        "description": "Kreativ showcase for digitale kunstnere",
-        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
-        "tech": ["Gatsby", "GraphQL", "Netlify CMS"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      },
-      {
-        "title": "Corporate Platform",
-        "description": "Enterprise-løsning med team-samarbejde",
-        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&crop=center",
-        "tech": ["Angular", "TypeScript", "AWS"],
-        "link": "https://we-enspyre.github.io/fotograf/"
+        "title": "Websites for small butikker",
+        "description": "Enterprise-løsning med et bookingsystem",
+        "image": "https://we-enspyre.github.io/fotograf/BT.png",
+        "tech": ["TypeScript", "React", "Tailwind CSS"],
+        "link": "https://we-enspyre.github.io/BT/"
       }
     ]
   },
