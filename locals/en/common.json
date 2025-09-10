@@ -12,55 +12,41 @@
     "highlight": "Experiences",
     "cta": "Explore Our Work"
   },
-   "gallery": {
-    "titlePrefix": "Our",
-    "titleHighlight": "Gallery",
-    "description": "Explore our portfolio of cutting-edge web solutions that drive business growth",
-    "projects": [
-      {
-        "title": "Portfolio Websites",
-        "description": "Elegant photography in Aarhus. Weddings, portraits, and events captured by Emilie Nørgaard.",
-        "image": "https://we-enspyre.github.io/fotograf/fotograf.png",
-        "tech": ["Vite.js", "TypeScript", "React", "Tailwind CSS"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      },
-      {
-        "title": "SaaS Dashboard",
-        "description": "Analytics platform with real-time data visualization",
-        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
-        "tech": ["Vue.js", "Python", "D3.js"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      },
-      {
-        "title": "Restaurant Website",
-        "description": "Elegant dining experience with online reservations",
-        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop&crop=center",
-        "tech": ["Next.js", "Tailwind", "Prisma"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      },
-      {
-        "title": "Mobile App Landing",
-        "description": "App showcase with interactive prototypes",
-        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop&crop=center",
-        "tech": ["React", "Framer Motion", "Firebase"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      },
-      {
-        "title": "Portfolio Website",
-        "description": "Creative showcase for digital artist",
-        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
-        "tech": ["Gatsby", "GraphQL", "Netlify CMS"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      },
-      {
-        "title": "Corporate Platform",
-        "description": "Enterprise solution with team collaboration",
-        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&crop=center",
-        "tech": ["Angular", "TypeScript", "AWS"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      }
-    ]
-  },
+  "gallery": {
+  "titlePrefix": "Our",
+  "titleHighlight": "Gallery",
+  "description": "Explore our portfolio of cutting-edge web solutions that drive growth for your business",
+  "projects": [
+    {
+      "title": "Portfolio Websites",
+      "description": "Elegant photography in Aarhus. Weddings, portraits, and events captured by Emilie Nørgaard.",
+      "image": "https://we-enspyre.github.io/fotograf/fotograf.png",
+      "tech": ["Vite.js", "TypeScript", "React", "Tailwind CSS"],
+      "link": "https://we-enspyre.github.io/fotograf/"
+    },
+    {
+      "title": "SaaS Dashboard",
+      "description": "Functional landing page and dashboard for Shamnet",
+      "image": "https://we-enspyre.github.io/enspyre_1/shamnetwide.png",
+      "tech": ["Vite.js", "Hostinger", "WordPress"],
+      "link": "https://www.sham-net.com/"
+    },
+    {
+      "title": "Restaurant Website",
+      "description": "Elegant dining experience with online reservations",
+      "image": "https://we-enspyre.github.io/enspyre_1/pizzatemplate.png",
+      "tech": ["Next.js", "Tailwind", "Tailwind CSS"],
+      "link": "https://we-enspyre.github.io/PizzaTemplate/"
+    },
+    {
+      "title": "Websites for small shops",
+      "description": "Enterprise solution with a booking system",
+      "image": "https://we-enspyre.github.io/enspyre_1/fotograf/BT.png",
+      "tech": ["TypeScript", "React", "Tailwind CSS"],
+      "link": "https://we-enspyre.github.io/BT/"
+    }
+  ]
+},
   "about": {
     "title": "Meet The",
     "highlight": "Team",
