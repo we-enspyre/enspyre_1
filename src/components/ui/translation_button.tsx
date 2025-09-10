@@ -45,10 +45,6 @@ const TranslationButton = () => {
       alt="Translation Flag"
       className="translation-flag w-6 h-6"
       />
-      <span className="ml-2">
-        {/* // switch places between the dk and en  */}
-      {current === "en" ? "🇩🇰" : "🇬🇧"}
-      </span>
     </button>
   );
 };
