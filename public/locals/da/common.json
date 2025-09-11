@@ -27,9 +27,9 @@
       {
         "title": "SaaS Dashboard",
         "description": "Funktionelt Landingpage og Dashboard for Shamnet",
-        "image": "https://we-enspyre.github.io/fotograf/shamnetwide.png",
+        "image": "https://we-enspyre.github.io/shamnetwide.png",
         "tech": ["Vite.js", "Hostinger", "WordPress"],
-        "link": "https://www.sham-net.com/"
+        "link": "https://www.sham-united.com/"
       },
       {
         "title": "Restaurant Website",
@@ -41,7 +41,7 @@
       {
         "title": "Websites for small butikker",
         "description": "Enterprise-løsning med et bookingsystem",
-        "image": "https://we-enspyre.github.io/fotograf/BT.png",
+        "image": "https://we-enspyre.github.io/BT.png",
         "tech": ["TypeScript", "React", "Tailwind CSS"],
         "link": "https://we-enspyre.github.io/BT/"
       }
