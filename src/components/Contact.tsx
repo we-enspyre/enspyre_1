@@ -102,13 +102,9 @@ const Contact = () => {
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <h3 className="text-2xl font-semibold text-foreground mb-4">{t("contact.infoTitle")}</h3>
               <p className="text-muted-foreground mb-6">{t("contact.infoDescription")}</p>
+              <p className="text-muted-foreground mb-6">{t("contact.infoDescription1")}</p>
+              <p className="text-muted-foreground mb-6">{t("contact.infoDescription2")}</p>
               <div className="space-y-4">
-                {services.map((service, i) => (
-                  <div key={i} className="flex items-center gap-3 text-muted-foreground">
-                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: service.color }}></div>
-                    <span>{service.label}</span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
