@@ -2,6 +2,8 @@
    "navbar": {
     "items": [
       { "name": "Gallery", "target": "#gallery" },
+      { "name": "Collect Leads", "target": "#lead-collection" },
+      { "name": "Manage Leads", "target": "#leads-management" },
       { "name": "Contact Us", "target": "#contact" },
       { "name": "About Us", "target": "#about" }
     ],
