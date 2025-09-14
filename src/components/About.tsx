@@ -72,7 +72,7 @@ const About = () => {
               className="developer-card bg-white/10 border border-blue-200/20 rounded-xl shadow-lg p-8 flex flex-col justify-between hover:scale-105 transition-transform duration-300 h-full"
             >
               <div className="flex-grow">
-                <h3 className="text-2xl font-bold text-blue-600 mb-2">
+                <h3 className="text-foreground font-bold text-blue-600 mb-2 text-2xl md:text-3xl">
                   {item.type}
                 </h3>
                 <p className="text-lg text-blue-400 font-semibold mb-2">
@@ -94,6 +94,9 @@ const About = () => {
               <button
                 className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg w-full"
                 onClick={() => {
+                  
+                  window.dispatchEvent(new CustomEvent("selectService", { detail: item.type }));
+
                   const contactSection = document.getElementById("contact");
                   if (contactSection) {
                     contactSection.scrollIntoView({ behavior: "smooth" });

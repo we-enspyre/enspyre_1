@@ -1,98 +1,202 @@
-import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { Send, Mail, MessageSquare } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { Send, Mail, MessageSquare } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 type Service = { label: string; color: string };
 
+const SUBJECT_OPTIONS = [
+  { value: "landing-page", label: "Landing Page" },
+  { value: "hjemmeside", label: "Hjemmeside" },
+  { value: "saas", label: "SAAS" },
+];
+
 const Contact = () => {
   const { t } = useTranslation();
   const contactRef = useRef<HTMLDivElement>(null);
-  const [formData, setFormData] = useState({ email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    email: "",
+    message: "",
+    subject: SUBJECT_OPTIONS[0].value,
+  });
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  useEffect(() => {
+  const handleSelectService = (e: Event) => {
+    const customEvent = e as CustomEvent<string>;
+    // map your service label/type to the SUBJECT_OPTIONS values
+    const selected = SUBJECT_OPTIONS.find(opt =>
+      opt.label.toLowerCase() === customEvent.detail.toLowerCase()
+    );
+    if (selected) {
+      setFormData(prev => ({ ...prev, subject: selected.value }));
+    }
+  };
+
+  window.addEventListener("selectService", handleSelectService);
+  return () => {
+    window.removeEventListener("selectService", handleSelectService);
+  };
+}, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo('.contact-form',
+      gsap.fromTo(
+        ".contact-form",
         { opacity: 0, x: -50 },
-        { opacity: 1, x: 0, duration: 1, ease: 'power2.out', scrollTrigger: { trigger: '.contact-form', start: 'top 80%' } }
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: { trigger: ".contact-form", start: "top 80%" },
+        }
       );
-      gsap.fromTo('.contact-info',
+      gsap.fromTo(
+        ".contact-info",
         { opacity: 0, x: 50 },
-        { opacity: 1, x: 0, duration: 1, ease: 'power2.out', scrollTrigger: { trigger: '.contact-info', start: 'top 80%' } }
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: { trigger: ".contact-info", start: "top 80%" },
+        }
       );
     }, contactRef);
 
     return () => ctx.revert();
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://formspree.io/f/mvgqzekb', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email, message: formData.message })
+      const res = await fetch("https://formspree.io/f/xdklvngl", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          message: formData.message,
+          subject: formData.subject,
+        }),
       });
-      if (res.ok) { setStatus('success'); setFormData({ email: '', message: '' }); }
-      else setStatus('error');
-    } catch { setStatus('error'); }
+      if (res.ok) {
+        setStatus("success");
+        setFormData({
+          email: "",
+          message: "",
+          subject: SUBJECT_OPTIONS[0].value,
+        });
+      } else setStatus("error");
+    } catch {
+      setStatus("error");
+    }
   };
 
   const services = t("contact.services", { returnObjects: true }) as Service[];
 
   return (
-    <section id="contact" ref={contactRef} className="animate-on-scroll py-20 px-6">
+    <section
+      id="contact"
+      ref={contactRef}
+      className="animate-on-scroll py-20 px-6"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            {t("contact.titlePrefix")} <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">{t("contact.titleHighlight")}</span>
+            {t("contact.titlePrefix")}{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              {t("contact.titleHighlight")}
+            </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t("contact.description")}</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            {t("contact.description")}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="contact-form">
-            {status === 'idle' && (
+            {status === "idle" && (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="relative">
                   <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-foreground z-10" />
                   <input
-                    type="email" name="email" placeholder={t("contact.emailPlaceholder")}
-                    value={formData.email} onChange={handleInputChange} required
+                    type="email"
+                    name="email"
+                    placeholder={t("contact.emailPlaceholder")}
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="w-full pl-12 pr-4 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
                   />
                 </div>
 
                 <div className="relative">
+                  <label htmlFor="subject" className="sr-only">
+                    {t("contact.subjectLabel") || "Subject"}
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    aria-label={t("contact.subjectLabel") || "Subject"}
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full pl-4 pr-4 py-4 bg-white/5 dark:bg-neutral-900 backdrop-blur-sm border border-white/10 rounded-xl text-foreground placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                  >
+                    {SUBJECT_OPTIONS.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="relative">
                   <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-foreground z-10" />
                   <textarea
-                    name="message" placeholder={t("contact.messagePlaceholder")}
-                    value={formData.message} onChange={handleInputChange} required rows={6}
-                    className="w-full pl-12 pr-4 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 resize-none"
+                    name="message"
+                    placeholder={t("contact.messagePlaceholder")}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    className="w-full pl-12 pr-4 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-foreground placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 resize-none"
                   />
                 </div>
 
-                <button type="submit" className="group w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center gap-3">
-                  {t("contact.sendButton")} <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <button
+                  type="submit"
+                  className="group w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center gap-3"
+                >
+                  {t("contact.sendButton")}{" "}
+                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </form>
             )}
 
-            {status === 'success' && (
+            {status === "success" && (
               <div className="bg-green-500/10 border border-green-400/20 text-green-300 p-6 rounded-xl text-center shadow-lg backdrop-blur-sm transition-all duration-500">
-                <h3 className="text-2xl font-semibold mb-2">{t("contact.successTitle")}</h3>
+                <h3 className="text-2xl font-semibold mb-2">
+                  {t("contact.successTitle")}
+                </h3>
                 <p className="text-green-200">{t("contact.successMessage")}</p>
               </div>
             )}
 
-            {status === 'error' && (
+            {status === "error" && (
               <div className="bg-red-500/10 border border-red-400/20 text-red-300 p-6 rounded-xl text-center shadow-lg backdrop-blur-sm transition-all duration-500">
-                <h3 className="text-2xl font-semibold mb-2">{t("contact.errorTitle")}</h3>
+                <h3 className="text-2xl font-semibold mb-2">
+                  {t("contact.errorTitle")}
+                </h3>
                 <p className="text-red-200">{t("contact.errorMessage")}</p>
               </div>
             )}
@@ -100,12 +204,19 @@ const Contact = () => {
 
           <div className="contact-info space-y-8">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold text-foreground mb-4">{t("contact.infoTitle")}</h3>
-              <p className="text-muted-foreground mb-6">{t("contact.infoDescription")}</p>
-              <p className="text-muted-foreground mb-6">{t("contact.infoDescription1")}</p>
-              <p className="text-muted-foreground mb-6">{t("contact.infoDescription2")}</p>
-              <div className="space-y-4">
-              </div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">
+                {t("contact.infoTitle")}
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                {t("contact.infoDescription")}
+              </p>
+              <p className="text-muted-foreground mb-6">
+                {t("contact.infoDescription1")}
+              </p>
+              <p className="text-muted-foreground mb-6">
+                {t("contact.infoDescription2")}
+              </p>
+              <div className="space-y-4"></div>
             </div>
           </div>
         </div>
