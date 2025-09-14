@@ -41,7 +41,7 @@ const TranslationButton = () => {
       aria-label="Toggle language"
     >
       <img
-      src={current === "en" ? dkIcon : engIcon}
+      src={current === "en" ? engIcon : dkIcon}
       alt="Translation Flag"
       className="translation-flag w-6 h-6"
       />

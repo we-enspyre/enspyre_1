@@ -27,12 +27,7 @@ const About = () => {
       description: t("services.service.2.description"),
       features: t("services.service.2.features", { returnObjects: true }),
     },
-    {
-      type: t("services.service.3.type"),
-      price: t("services.service.3.price"),
-      description: t("services.service.3.description"),
-      features: t("services.service.3.features", { returnObjects: true }),
-    },
+   
   ];
 
   useEffect(() => {
@@ -62,7 +57,7 @@ const About = () => {
     <section id="services" ref={aboutRef} className="animate-on-scroll py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <h2 className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-4xl md:text-6xl font-bold mb-6">
             {t("services.title")}{" "}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -74,9 +69,9 @@ const About = () => {
           {service.map((item, index) => (
             <div
               key={index}
-              className="developer-card bg-white/10 border border-blue-200/20 rounded-xl shadow-lg p-8 flex flex-col justify-between hover:scale-105 transition-transform duration-300"
+              className="developer-card bg-white/10 border border-blue-200/20 rounded-xl shadow-lg p-8 flex flex-col justify-between hover:scale-105 transition-transform duration-300 h-full"
             >
-              <div>
+              <div className="flex-grow">
                 <h3 className="text-2xl font-bold text-blue-600 mb-2">
                   {item.type}
                 </h3>
@@ -95,19 +90,18 @@ const About = () => {
                     ))}
                   </ul>
                 )}
-
-                <button
-                  className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg"
-                  onClick={() => {
-                    const contactSection = document.getElementById("contact");
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  Select {item.type}
-                </button>
               </div>
+              <button
+                className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg w-full"
+                onClick={() => {
+                  const contactSection = document.getElementById("contact");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                {t("services.choosePlan")} {item.type}
+              </button>
             </div>
           ))}
         </div>
