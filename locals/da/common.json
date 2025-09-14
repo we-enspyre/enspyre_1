@@ -1,75 +1,82 @@
 {
    "navbar": {
     "items": [
-      { "name": "Galleri", "target": "#gallery" },
+      { "name": "Løsninger", "target": "#gallery" },
       { "name": "Kontakt Os", "target": "#contact" },
       { "name": "Om Os", "target": "#about" }
     ],
     "toggleTheme": "Skift tema"
   },
   "hero": {
-    "title": "Skaber digitale",
-    "highlight": "Oplevelser",
-    "cta": "Udforsk Vores Arbejde"
+    "title": "Vi former digitale",
+    "highlight": "oplevelser",
+    "cta": "Se vores løsninger"
   },
    "gallery": {
     "titlePrefix": "Vores",
-    "titleHighlight": "Galleri",
-    "description": "Udforsk vores portefølje af banebrydende webløsninger, der skaber vækst i din forretning",
-    "projects": [
-      {
-        "title": "Portfolio Websites",
-        "description": "Elegant fotografering i Aarhus. Bryllupper, portrætter og events fanget af Emilie Nørgaard.",
-        "image": "https://we-enspyre.github.io/fotograf/fotograf.png",
-        "tech": ["Vite.js", "TypeScript", "React", "Tailwind CSS"],
-        "link": "https://we-enspyre.github.io/fotograf/"
-      },
-      {
-        "title": "SaaS Dashboard",
-        "description": "Funktionelt Landingpage og Dashboard for Shamnet",
-        "image": "https://we-enspyre.github.io/shamnetwide.png",
-        "tech": ["Vite.js", "Hostinger", "WordPress"],
-        "link": "https://www.sham-united.com/"
-      },
-      {
-        "title": "Restaurant Website",
-        "description": "Elegant spiseoplevelse med online reservationer",
-        "image": "https://we-enspyre.github.io/pizzatemplate.png",
-        "tech": ["Next.js", "Tailwind", "Tailwind CSS"],
-        "link": "https://we-enspyre.github.io/PizzaTemplate/"
-      },
-      {
-        "title": "Websites for small butikker",
-        "description": "Enterprise-løsning med et bookingsystem",
-        "image": "https://we-enspyre.github.io/BT.png",
-        "tech": ["TypeScript", "React", "Tailwind CSS"],
-        "link": "https://we-enspyre.github.io/BT/"
-      }
-    ]
+    "titleHighlight": "Løsninger",
+    "description": "Se vores udvalg af webløsninger, der hjælper din virksomhed med at vokse.",
+  "projects": [
+    {
+      "title": "Portfolio Hjemmeside",
+      "description": "Visuelt portfolio til fotografering og kreative projekter.",
+      "image": "https://we-enspyre.github.io/fotograf/fotograf.png",
+      "tech": ["Vite.js", "TypeScript", "React", "Tailwind CSS"],
+      "link": "https://we-enspyre.github.io/fotograf/"
+    },
+    {
+      "title": "Shamunited Import og Export",
+      "description": "Funktionel landing page og dashboard for Shamunited.",
+      "image": "https://we-enspyre.github.io/enspyre_1/shamnetwide.png",
+      "tech": ["Vite.js", "Hostinger", "WordPress"],
+      "link": "https://www.sham-united.com/"
+    },
+    {
+      "title": "Restaurant Hjemmeside",
+      "description": "Elegant hjemmeside til restauranter med online bestilling.",
+      "image": "https://we-enspyre.github.io/enspyre_1/pizzatemplate.png",
+      "tech": ["Next.js", "Tailwind", "Tailwind CSS"],
+      "link": "https://we-enspyre.github.io/PizzaTemplate/"
+    },
+    {
+      "title": "Frisør Hjemmeside",
+      "description": "Enterprise-løsning med bookingsystem.",
+      "image": "https://we-enspyre.github.io/enspyre_1/BT.png",
+      "tech": ["TypeScript", "React", "Tailwind CSS"],
+      "link": "https://we-enspyre.github.io/BT/"
+    }
+   ]
   },
-  "about": {
-    "title": "Mød",
-    "highlight": "Teamet",
-    "subtitle": "De kreative hoveder bag Enspyre, dedikeret til at gøre dine digitale drømme til virkelighed",
-    "developers": [
+  "services": {
+    "title": "Services",
+    "subtitle": "Disse er vores forskellige services",
+    "choosePlan": "Vælg",
+    "service": [
       {
-        "role": "Full-Stack Udvikler",
-        "bio": "Brænder for at skabe skalerbare webapplikationer med moderne teknologier. Specialiseret i React, Node.js og cloud-arkitektur."
+        "type": "Landing page",
+        "price": "4.999 DKK",
+        "description": "Simpel og effektiv side for at få din forretning til at skille sig ud.",
+        "features":["3 sider", "Responsivt design", "Kontaktformular", "SEO-optimering"]
       },
       {
-        "role": "UI/UX Designer",
-        "bio": "Designfokuseret udvikler, der bygger bro mellem smukke grænseflader og problemfri brugeroplevelser. Elsker at skabe pixel-perfekte designs."
+        "type": "Hjemmeside",
+        "price": "8.999 DKK",
+        "description": "Hjemmeside med avancerede funktioner til at forbedre din online tilstedeværelse.",
+        "features":["Forside + 4 sider", "Responsivt design", "Kontaktformular", "Blog", "SEO-optimering","CMS-integration", "Bookingsystem"]
       },
       {
-        "role": "DevOps Ingeniør",
-        "bio": "Infrastruktur-entusiast, der sikrer at vores applikationer kører problemfrit i stor skala. Ekspert i cloud-platforme og automatisering."
+        "type": "SaaS",
+        "price": "Kontakt for pris",
+        "description": "Skræddersyet SaaS-løsning til din virksomheds behov.",
+        "features":["Responsivt design", "Bookingsystem", "Kontaktformular", "Blog", "SEO-optimering", "Brugeradministration", "Mobil-app"]
       }
-    ]
+    ],
+    "highlight": "Alle priser er eksklusiv hosting omkostninger."
   },
     "contact": {
-    "titlePrefix": "Kom i",
-    "titleHighlight": "Kontakt",
-    "description": "Klar til at realisere din digitale vision? Lad os starte samtalen.",
+    "titlePrefix": "Kontakt",
+    "titleHighlight": "Os",
+    "description": "Klar til at realisere din digitale vision? Lad os tage en snak.",
     "emailPlaceholder": "Din e-mailadresse",
     "messagePlaceholder": "Fortæl os om dit projekt...",
     "sendButton": "Send besked",
@@ -77,23 +84,9 @@
     "successMessage": "Vi vender tilbage til dig så hurtigt som muligt.",
     "errorTitle": "Noget gik galt",
     "errorMessage": "Beklager, vi kunne ikke sende beskeden. Prøv venligst igen senere.",
-    "infoTitle": "Lad os bygge noget fantastisk",
-    "infoDescription": "Vi brænder for at skabe digitale oplevelser, der gør en forskel. Uanset om du er en startup, der vil markere dig, eller en etableret virksomhed, der er klar til at udvikle sig, er vi her for at hjælpe.",
-    "services": [
-      { "label": "Custom Webudvikling", "color": "#3b82f6" },
-      { "label": "UI/UX Design", "color": "#a855f7" },
-      { "label": "SaaS-værktøjer", "color": "#06b6d4" },
-      { "label": "Performanceoptimering", "color": "#ec4899" }
-    ]
-  },
-  "info": {
-    "heading": "Lad os Bygge Noget Fantastisk",
-    "text": "Vi brænder for at skabe digitale oplevelser, der gør en forskel. Uanset om du er en startup, der vil sætte dit præg, eller en etableret virksomhed, der vil udvikle sig, er vi her for at hjælpe.",
-    "services": [
-      { "label": "Skræddersyet Webudvikling", "color": "#3b82f6" },
-      { "label": "UI/UX Design", "color": "#a855f7" },
-      { "label": "SaaS Værktøjer", "color": "#06b6d4" },
-      { "label": "Ydelsesoptimering", "color": "#ec4899" }
-    ]
+    "infoTitle": "Mød teamet bag Enspyre",
+    "infoDescription": "Vi er tre studerende i softwareteknologi og er nu i gang med vores kandidatuddannelse. Sammen deler vi en passion for at skabe brugbare og innovative digitale løsninger.",
+    "infoDescription1": "Hos Enspyre mener vi, at alle startups og små virksomheder skal have muligheden for en professionel online tilstedeværelse - uden bøvl. Vores mål er at gøre det simpelt, tilgængeligt og hurtigt at få sin egen hjemmeside.",
+    "infoDescription2": "Vores vision går dog videre end blot hjemmesider. Fremadrettet vil vi udvikle SaaS-produkter og andre innovative IT-løsninger, der kan styrke iværksættere og hjælpe virksomheder med at vokse."
   }
 }

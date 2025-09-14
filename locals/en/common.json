@@ -1,72 +1,99 @@
 {
-   "navbar": {
+  "navbar": {
     "items": [
-      { "name": "Gallery", "target": "#gallery" },
+      { "name": "Templates", "target": "#gallery" },
       { "name": "Contact Us", "target": "#contact" },
       { "name": "About Us", "target": "#about" }
     ],
     "toggleTheme": "Toggle theme"
   },
-   "hero": {
+  "hero": {
     "title": "Crafting Digital",
     "highlight": "Experiences",
     "cta": "Explore Our Work"
   },
   "gallery": {
-  "titlePrefix": "Our",
-  "titleHighlight": "Gallery",
-  "description": "Explore our portfolio of cutting-edge web solutions that drive growth for your business",
-  "projects": [
-    {
-      "title": "Portfolio Websites",
-      "description": "Elegant photography in Aarhus. Weddings, portraits, and events captured by Emilie Nørgaard.",
-      "image": "https://we-enspyre.github.io/fotograf/fotograf.png",
-      "tech": ["Vite.js", "TypeScript", "React", "Tailwind CSS"],
-      "link": "https://we-enspyre.github.io/fotograf/"
-    },
-    {
-      "title": "SaaS Dashboard",
-      "description": "Functional landing page and dashboard for Shamnet",
-      "image": "https://we-enspyre.github.io/enspyre_1/shamnetwide.png",
-      "tech": ["Vite.js", "Hostinger", "WordPress"],
-      "link": "https://www.sham-united.com/"
-    },
-    {
-      "title": "Restaurant Website",
-      "description": "Elegant dining experience with online reservations",
-      "image": "https://we-enspyre.github.io/enspyre_1/pizzatemplate.png",
-      "tech": ["Next.js", "Tailwind", "Tailwind CSS"],
-      "link": "https://we-enspyre.github.io/PizzaTemplate/"
-    },
-    {
-      "title": "Websites for small shops",
-      "description": "Enterprise solution with a booking system",
-      "image": "https://we-enspyre.github.io/enspyre_1/BT.png",
-      "tech": ["TypeScript", "React", "Tailwind CSS"],
-      "link": "https://we-enspyre.github.io/BT/"
-    }
-  ]
-},
-  "about": {
-    "title": "Meet The",
-    "highlight": "Team",
-    "subtitle": "The creative minds behind Enspyre, dedicated to bringing your digital dreams to reality",
-    "developers": [
+    "titlePrefix": "Our",
+    "titleHighlight": "Templates",
+    "description": "Explore our portfolio of cutting-edge web solutions that drive business growth",
+    "projects": [
       {
-        "role": "Full-Stack Developer",
-        "bio": "Passionate about creating scalable web applications with modern technologies. Specializes in React, Node.js, and cloud architecture."
+        "title": "Portfolio Websites",
+        "description": "Elegant photography in Aarhus. Weddings, portraits, and events captured by Emilie Nørgaard.",
+        "image": "https://we-enspyre.github.io/fotograf/fotograf.png",
+        "tech": ["Vite.js", "TypeScript", "React", "Tailwind CSS"],
+        "link": "https://we-enspyre.github.io/fotograf/"
       },
       {
-        "role": "UI/UX Designer",
-        "bio": "Design-focused developer who bridges the gap between beautiful interfaces and seamless user experiences. Loves crafting pixel-perfect designs."
+        "title": "SaaS Dashboard",
+        "description": "Functional landing page and dashboard for Shamnet",
+        "image": "https://we-enspyre.github.io/enspyre_1/shamnetwide.png",
+        "tech": ["Vite.js", "Hostinger", "WordPress"],
+        "link": "https://www.sham-united.com/"
       },
       {
-        "role": "DevOps Engineer",
-        "bio": "Infrastructure enthusiast who ensures our applications run smoothly at scale. Expert in cloud platforms and automation."
+        "title": "Restaurant Website",
+        "description": "Elegant dining experience with online reservations",
+        "image": "https://we-enspyre.github.io/enspyre_1/pizzatemplate.png",
+        "tech": ["Next.js", "Tailwind", "Tailwind CSS"],
+        "link": "https://we-enspyre.github.io/PizzaTemplate/"
+      },
+      {
+        "title": "Websites for small shops",
+        "description": "Enterprise solution with a booking system",
+        "image": "https://we-enspyre.github.io/enspyre_1/BT.png",
+        "tech": ["TypeScript", "React", "Tailwind CSS"],
+        "link": "https://we-enspyre.github.io/BT/"
       }
     ]
   },
- "contact": {
+  "services": {
+    "title": "Services",
+    "subtitle": "These are our different services",
+    "choosePlan": "Select",
+    "service": [
+      {
+        "type": "Landing page",
+        "price": "4.999 DKK",
+        "description": "Simple and effective page to make your business stand out.",
+        "features": [
+          "5 pages",
+          "Responsive design",
+          "Contact form",
+          "SEO optimization"
+        ]
+      },
+      {
+        "type": "Website",
+        "price": "8.999 DKK",
+        "description": "Website with advanced features to enhance your online presence.",
+        "features": [
+          "5 pages",
+          "Responsive design",
+          "Contact form",
+          "Blog",
+          "SEO optimization"
+        ]
+      },
+
+      {
+        "type": "SaaS",
+        "price": "Contact for price",
+        "description": "Tailored SaaS solution for your business needs.",
+        "features": [
+          "Responsive design",
+          "Booking system",
+          "Contact form",
+          "Blog",
+          "SEO optimization",
+          "User management",
+          "Mobile app"
+        ]
+      }
+    ],
+    "highlight": "All prices are excluding hosting fees."
+  },
+  "contact": {
     "titlePrefix": "Get In",
     "titleHighlight": "Touch",
     "description": "Ready to bring your digital vision to life? Let's start the conversation.",
@@ -77,23 +104,9 @@
     "successMessage": "We will get back to you as soon as possible.",
     "errorTitle": "Something went wrong",
     "errorMessage": "Sorry, we were unable to send the message. Please try again later.",
-    "infoTitle": "Let's Build Something Amazing",
-    "infoDescription": "We're passionate about creating digital experiences that make a difference. Whether you're a startup looking to make your mark or an established business ready to evolve, we're here to help.",
-    "services": [
-      { "label": "Custom Web Development", "color": "#3b82f6" },
-      { "label": "UI/UX Design", "color": "#a855f7" },
-      { "label": "SaaS Tools", "color": "#06b6d4" },
-      { "label": "Performance Optimization", "color": "#ec4899" }
-    ]
-  },
-  "info": {
-    "heading": "Let's Build Something Amazing",
-    "text": "We're passionate about creating digital experiences that make a difference. Whether you're a startup looking to make your mark or an established business ready to evolve, we're here to help.",
-    "services": [
-      { "label": "Custom Web Development", "color": "#3b82f6" },
-      { "label": "UI/UX Design", "color": "#a855f7" },
-      { "label": "SaaS Tools", "color": "#06b6d4" },
-      { "label": "Performance Optimization", "color": "#ec4899" }
-    ]
+    "infoTitle": "About Our Team",
+    "infoDescription": "We’re three software engineering students now pursuing our master’s degree, united by a shared passion for building digital solutions.",
+    "infoDescription1": "At Enspyre, we believe that every startup and small business deserves access to a professional online presence - without barriers. That’s why we focus on making it simple, affordable, and fast to get your very own website.",
+    "infoDescription2": "Our vision goes beyond websites. In the future, we aim to explore SaaS products and other innovative IT solutions that can empower entrepreneurs and help businesses grow."
   }
 }
