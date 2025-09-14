@@ -47,24 +47,36 @@
       }
     ]
   },
-  "about": {
-    "title": "Mød",
-    "highlight": "Teamet",
-    "subtitle": "De kreative hoveder bag Enspyre, dedikeret til at gøre dine digitale drømme til virkelighed",
-    "developers": [
+  "services": {
+    "title": "Services",
+    "subtitle": "Disse er vores forskellige services",
+    "service": [
       {
-        "role": "Full-Stack Udvikler",
-        "bio": "Brænder for at skabe skalerbare webapplikationer med moderne teknologier. Specialiseret i React, Node.js og cloud-arkitektur."
+        "type": "Landing page",
+        "price": "4.999 DKK",
+        "description": "Simpel og effektiv side for at få din forretning til at skille sig ud.",
+        "features":["3 sider", "Responsivt design", "Kontaktformular", "SEO-optimering"]
       },
       {
-        "role": "UI/UX Designer",
-        "bio": "Designfokuseret udvikler, der bygger bro mellem smukke grænseflader og problemfri brugeroplevelser. Elsker at skabe pixel-perfekte designs."
+        "type": "Hjemmeside",
+        "price": "8.999 DKK",
+        "description": "Hjemmeside med avancerede funktioner til at forbedre din online tilstedeværelse.",
+        "features":["5 sider", "Responsivt design", "Kontaktformular", "Blog", "SEO-optimering"]
       },
       {
-        "role": "DevOps Ingeniør",
-        "bio": "Infrastruktur-entusiast, der sikrer at vores applikationer kører problemfrit i stor skala. Ekspert i cloud-platforme og automatisering."
+        "type": "Hjemmeside med booking system",
+        "price": "10.999 DKK",
+        "description": "Bookingside der gør det nemt for kunder at booke tid.",
+        "features":["5 sider", "Responsivt design", "Bookingsystem", "Kontaktformular", "Blog", "SEO-optimering"]
+      },
+      {
+        "type": "SaaS",
+        "price": "ring",
+        "description": "Skræddersyet SaaS-løsning til din virksomheds behov.",
+        "features":["Responsivt design", "Bookingsystem", "Kontaktformular", "Blog", "SEO-optimering", "Brugeradministration", "Mobil-app"]
       }
-    ]
+    ],
+    "highlight": "Alle priser er uden moms og hosting omkostninger."
   },
     "contact": {
     "titlePrefix": "Kom i",

@@ -47,24 +47,41 @@
     }
   ]
 },
-  "about": {
-    "title": "Meet The",
-    "highlight": "Team",
-    "subtitle": "The creative minds behind Enspyre, dedicated to bringing your digital dreams to reality",
-    "developers": [
+  "services": {
+    "title": "Services",
+    "subtitle": "These are our different services",
+    "service": [
       {
-        "role": "Full-Stack Developer",
-        "bio": "Passionate about creating scalable web applications with modern technologies. Specializes in React, Node.js, and cloud architecture."
+        "type": "Landing page",
+        "price": "4.999 DKK",
+        "description": "Simple and effective page to make your business stand out.",
+        "features": [
+          "5 pages",
+          "Responsive design",
+          "Contact form",
+          "SEO optimization"
+        ]
       },
       {
-        "role": "UI/UX Designer",
-        "bio": "Design-focused developer who bridges the gap between beautiful interfaces and seamless user experiences. Loves crafting pixel-perfect designs."
+        "type": "Website",
+        "price": "8.999 DKK",
+        "description": "Website with advanced features to enhance your online presence.",
+        "features":["5 pages", "Responsive design", "Contact form", "Blog", "SEO optimization"]
       },
       {
-        "role": "DevOps Engineer",
-        "bio": "Infrastructure enthusiast who ensures our applications run smoothly at scale. Expert in cloud platforms and automation."
+       "type": "Website with booking system",
+        "price": "10.999 DKK",
+        "description": "Booking page that makes it easy for customers to book appointments.",
+        "features":["5 pages", "Responsive design", "Booking system", "Contact form", "Blog", "SEO optimization"]
+      },
+      {
+        "type": "SaaS",
+        "price": "call",
+        "description": "Tailored SaaS solution for your business needs.",
+        "features":["Responsive design", "Booking system", "Contact form", "Blog", "SEO optimization", "User management", "Mobile app"]
       }
-    ]
+    ],
+    "highlight": "All prices are excluding VAT and hosting fees."
   },
  "contact": {
     "titlePrefix": "Get In",

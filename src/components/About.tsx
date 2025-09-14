@@ -2,35 +2,36 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { features } from "process";
 
 const About = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
 
-  const developers = [
+  const service = [
     {
-      name: "Alex Chen",
-      role: t("about.developers.0.role"),
-      bio: t("about.developers.0.bio"),
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-      social: { github: "#", linkedin: "#", twitter: "#" },
+      type: t("services.service.0.type"),
+      price: t("services.service.0.price"),
+      description: t("services.service.0.description"),
+      features: t("services.service.0.features", { returnObjects: true }),
     },
     {
-      name: "Sarah Johnson",
-      role: t("about.developers.1.role"),
-      bio: t("about.developers.1.bio"),
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-      social: { github: "#", linkedin: "#", twitter: "#" },
+      type: t("services.service.1.type"),
+      price: t("services.service.1.price"),
+      description: t("services.service.1.description"),
+      features: t("services.service.1.features", { returnObjects: true }),
     },
     {
-      name: "Marcus Rodriguez",
-      role: t("about.developers.2.role"),
-      bio: t("about.developers.2.bio"),
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-      social: { github: "#", linkedin: "#", twitter: "#" },
+      type: t("services.service.2.type"),
+      price: t("services.service.2.price"),
+      description: t("services.service.2.description"),
+      features: t("services.service.2.features", { returnObjects: true }),
+    },
+    {
+      type: t("services.service.3.type"),
+      price: t("services.service.3.price"),
+      description: t("services.service.3.description"),
+      features: t("services.service.3.features", { returnObjects: true }),
     },
   ];
 
@@ -58,70 +59,63 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" ref={aboutRef} className="animate-on-scroll py-20 px-6">
+    <section id="services" ref={aboutRef} className="animate-on-scroll py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            {t("about.title")}{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              {t("about.highlight")}
-            </span>
+            {t("services.title")}{" "}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t("about.subtitle")}
+            {t("services.subtitle")}
           </p>
         </div>
 
         <div className="developers-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {developers.map((developer, index) => (
+          {service.map((item, index) => (
             <div
               key={index}
-              className="developer-card group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10"
+              className="developer-card bg-white/10 border border-blue-200/20 rounded-xl shadow-lg p-8 flex flex-col justify-between hover:scale-105 transition-transform duration-300"
             >
-              <div className="relative">
-                <img
-                  src={developer.image}
-                  alt={developer.name}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-semibold text-foreground mb-1">
-                    {developer.name}
-                  </h3>
-                  <p className="text-blue-300 font-medium">{developer.role}</p>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {developer.bio}
+              <div>
+                <h3 className="text-2xl font-bold text-blue-600 mb-2">
+                  {item.type}
+                </h3>
+                <p className="text-lg text-blue-400 font-semibold mb-2">
+                  {item.price}
                 </p>
+                <p className="text-base text-muted-foreground mb-4">
+                  {item.description}
+                </p>
+                {item.features && Array.isArray(item.features) && (
+                  <ul className="list-disc pl-5 space-y-1 mb-4">
+                    {item.features.map((feature: string, idx: number) => (
+                      <li key={idx} className="text-sm text-foreground">
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
-                <div className="flex gap-4">
-                  <a
-                    href={developer.social.github}
-                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-muted-foreground hover:text-white"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={developer.social.linkedin}
-                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-muted-foreground hover:text-blue-400"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={developer.social.twitter}
-                    className="p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 text-muted-foreground hover:text-cyan-400"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                </div>
+                <button
+                  className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg"
+                  onClick={() => {
+                    const contactSection = document.getElementById("contact");
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
+                  Select {item.type}
+                </button>
               </div>
             </div>
           ))}
         </div>
+        <h4 className="text-4xl md:text-4xl font-bold text-foreground display-flex justify-center flex 1">
+          <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent flex justify-center mt-6">
+            {t("services.highlight")}
+          </span>
+        </h4>
       </div>
     </section>
   );
