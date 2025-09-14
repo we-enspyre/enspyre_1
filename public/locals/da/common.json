@@ -1,21 +1,21 @@
 {
    "navbar": {
     "items": [
-      { "name": "Galleri", "target": "#gallery" },
+      { "name": "Løsninger", "target": "#gallery" },
       { "name": "Kontakt Os", "target": "#contact" },
       { "name": "Om Os", "target": "#about" }
     ],
     "toggleTheme": "Skift tema"
   },
   "hero": {
-    "title": "Skaber digitale",
-    "highlight": "Oplevelser",
-    "cta": "Udforsk Vores Arbejde"
+    "title": "Vi former digitale",
+    "highlight": "oplevelser",
+    "cta": "Se vores løsninger"
   },
    "gallery": {
     "titlePrefix": "Vores",
-    "titleHighlight": "Galleri",
-    "description": "Udforsk vores portefølje af banebrydende webløsninger, der skaber vækst i din forretning",
+    "titleHighlight": "Løsninger",
+    "description": "Se vores udvalg af webløsninger, der hjælper din virksomhed med at vokse.",
     "projects": [
       {
         "title": "Portfolio Websites",
@@ -79,9 +79,9 @@
     "highlight": "Alle priser er uden moms og hosting omkostninger."
   },
     "contact": {
-    "titlePrefix": "Kom i",
-    "titleHighlight": "Kontakt",
-    "description": "Klar til at realisere din digitale vision? Lad os starte samtalen.",
+    "titlePrefix": "Kontakt",
+    "titleHighlight": "Os",
+    "description": "Klar til at realisere din digitale vision? Lad os tage en snak.",
     "emailPlaceholder": "Din e-mailadresse",
     "messagePlaceholder": "Fortæl os om dit projekt...",
     "sendButton": "Send besked",
@@ -89,14 +89,10 @@
     "successMessage": "Vi vender tilbage til dig så hurtigt som muligt.",
     "errorTitle": "Noget gik galt",
     "errorMessage": "Beklager, vi kunne ikke sende beskeden. Prøv venligst igen senere.",
-    "infoTitle": "Lad os bygge noget fantastisk",
-    "infoDescription": "Vi brænder for at skabe digitale oplevelser, der gør en forskel. Uanset om du er en startup, der vil markere dig, eller en etableret virksomhed, der er klar til at udvikle sig, er vi her for at hjælpe.",
-    "services": [
-      { "label": "Custom Webudvikling", "color": "#3b82f6" },
-      { "label": "UI/UX Design", "color": "#a855f7" },
-      { "label": "SaaS-værktøjer", "color": "#06b6d4" },
-      { "label": "Performanceoptimering", "color": "#ec4899" }
-    ]
+    "infoTitle": "Mød teamet bag Enspyre",
+    "infoDescription": "Vi er tre studerende i softwareteknologi og er nu i gang med vores kandidatuddannelse. Sammen deler vi en passion for at skabe brugbare og innovative digitale løsninger.",
+    "infoDescription1": "Hos Enspyre mener vi, at alle startups og små virksomheder skal have muligheden for en professionel online tilstedeværelse - uden bøvl. Vores mål er at gøre det simpelt, tilgængeligt og hurtigt at få sin egen hjemmeside.",
+    "infoDescription2": "Vores vision går dog videre end blot hjemmesider. Fremadrettet vil vi udvikle SaaS-produkter og andre innovative IT-løsninger, der kan styrke iværksættere og hjælpe virksomheder med at vokse."
   },
   "info": {
     "heading": "Lad os Bygge Noget Fantastisk",
