@@ -4,7 +4,7 @@ import en from "./src/assets/locals/en/common.json";
 import da from "./src/assets/locals/da/common.json";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-localStorage.removeItem("lang") // For testing only, remove in production
+// localStorage.clear(); // Clear localStorage for testing purposes
 const savedLang = localStorage.getItem("lang") || "da"; // ✅ default Danish
 
 i18n.use(LanguageDetector).use(initReactI18next).init({
