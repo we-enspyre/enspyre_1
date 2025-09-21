@@ -2,8 +2,8 @@
    "navbar": {
     "items": [
       { "name": "Løsninger", "target": "#gallery" },
-      { "name": "Kontakt Os", "target": "#contact" },
-      { "name": "Om Os", "target": "#about" }
+      { "name": "Service", "target": "#services" },
+      { "name": "Kontakt Os", "target": "#contact" }
     ],
     "toggleTheme": "Skift tema"
   },

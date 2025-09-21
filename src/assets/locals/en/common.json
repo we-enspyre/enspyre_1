@@ -2,8 +2,8 @@
   "navbar": {
     "items": [
       { "name": "Templates", "target": "#gallery" },
-      { "name": "Contact Us", "target": "#contact" },
-      { "name": "About Us", "target": "#about" }
+      { "name": "Services", "target": "#services" },
+      { "name": "Contact Us", "target": "#contact" }
     ],
     "toggleTheme": "Toggle theme"
   },

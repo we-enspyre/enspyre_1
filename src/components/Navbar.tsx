@@ -5,6 +5,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { SunIcon, MenuIcon, MoonIcon, CloseIcon } from "@/components/ui/navbaricons";
 import TranslationButton from "@/components/ui/translation_button";
 import { useTranslation } from "react-i18next";
+import logodark from "../assets/logo-dark.png"
+import logolight from "../assets/logo-light.png"
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -63,15 +65,30 @@ const Navbar = () => {
       <nav
         ref={navRef}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "backdrop-blur-md bg-background/10 border-b border-border" : "bg-transparent"
+          isScrolled
+            ? "backdrop-blur-md bg-background/10 border-b border-border"
+            : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="logo">
-            <h1 className="text-2xl font-bold text-foreground">
-              En<span className="text-blue-400">spyre</span>
-            </h1>
-          </div>
+          <button
+            onClick={() => scrollToSection("#home")}
+            className="p-0 m-0 bg-transparent border-none"
+          >
+            {theme === "dark" ? (
+              <img
+                src={logodark}
+                alt="Enspyre Logo Dark"
+                className="h-14 w-auto"
+              />
+            ) : (
+              <img
+                src={logolight}
+                alt="Enspyre Logo Light"
+                className="h-14 w-auto"
+              />
+            )}
+          </button>
 
           {!isMobile && (
             <div className="flex items-center space-x-6">
@@ -93,7 +110,10 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
               <TranslationButton />
               <ThemeToggle />
-              <button onClick={() => setIsMenuOpen((prev) => !prev)} className="p-2">
+              <button
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+                className="p-2"
+              >
                 {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
               </button>
             </div>

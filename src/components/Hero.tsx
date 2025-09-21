@@ -94,7 +94,7 @@ const Hero = () => {
   };
 
   return (
-    <section ref={heroRef} className="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
+    <section ref={heroRef} className="home min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
       <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none z-0 translate-y-24 max-w-full overflow-hidden">
         <div className="playcard-fan-container" style={{ transform: isMobile ? "scale(0.7)" : "scale(1)" }}>
           {cardRefs.map((ref, i) => (
@@ -109,8 +109,8 @@ const Hero = () => {
       <div className="floating-sparkle absolute top-1/3 right-1/4 text-purple-400/30 z-10"><Sparkles size={32} /></div>
       <div className="floating-sparkle absolute bottom-1/3 left-1/3 text-cyan-400/30 z-10"><Sparkles size={20} /></div>
 
-      <div className="text-center max-w-4xl mx-auto relative z-20">
-        <h1 className="hero-title text-6xl md:text-8xl font-bold text-foreground mb-6 leading-tight">
+      <div className="text-center max-w-4xl mx-auto relative z-20 ">
+        <h1 className="hero-title text-6xl md:text-8xl font-bold text-foreground mb-6 leading-tight relative -top-10">
           {t("hero.title")}<br />
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
             {t("hero.highlight")}
